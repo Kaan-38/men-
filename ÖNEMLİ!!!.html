@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<style type="text/css">
+  body {background:grey; display: flex; align-items: center; justify-content: center; min-height: 100vh;}*{margin: 0; padding: 0; box-sizing: border-box;}
+  nav {width:260px; height:auto; background:#0a4894; border-radius: 5px;}
+  ul {list-style-type: none;}
+ .li1{position: relative; cursor: pointer;}
+  .div1 {position: relative; color: white; text-shadow: 0 0 1px white; display: flex; align-items: center; height: 50px; border-bottom: 1px solid white; box-sizing: border-box; cursor: pointer; }
+li.active .div1 , .div1:hover {background-color: #21579a;}
+.div2:hover {background-color:#1d1d1d;}
+.div1:after {content: ''; width: 0; height: 0; border-width: 12px; border-style: solid; border-color:#21579a transparent transparent transparent; position: absolute;z-index: 100; top: 50px; left: 4px; display:none; text-shadow: 0 0 10px #21579a;}
+.div1.i:after {display: none;} .div1.i {border-bottom: 0px solid #0a4894;}
+  ion-icon {font-size: 28px; position: relative; left: 2px; color: white; text-shadow: 0 0 2px white;}
+  h4 {position: relative; font-family: sans-serif; font-weight: bold;left: 7px; font-size: 18px; text-shadow: 0 0 1px white;}
+.div2 {display:none; height:40px; position: relative; background: black; }
+h3{position: relative; color: white; font-family: sans-serif; font-weight: bold; top:13px; left: 8px; font-size: 17px;}
+
+label {width: 4px; height:30px; background:#0a4894; position: absolute; display: flex; flex-direction: column; left: 0; top: 5px; visibility: hidden;}
+li.active .div2:hover label {visibility: visible;}
+li.active .div2 {display: block;}
+li.active .div1:after {display: block;}
+li.active .div1.i:after {display: none;}
+
+</style>
+</head>
+<body>
+<nav>
+  <ul>
+    <li class="li1">
+      <div class="div1"><ion-icon name="person-outline"></ion-icon><h4>PROFİLE</h4> </div>
+     <div class="div2"><label></label><h3>POSTS</h3></div>
+    <div class="div2"><label></label><h3>PİCTURE</h3></div>
+   </li>
+   
+
+   <li class="li1">
+      <div class="div1"><ion-icon name="chatbox-ellipses-outline"></ion-icon><h4>MESSAGES</h4> </div>
+      <div class="div2"><label></label><h3>NEW</h3></div>
+     <div class="div2"><label></label><h3>SEND</h3></div>
+    <div class="div2"><label></label><h3>SPAM</h3></div>
+   </li>
+
+   <li class="li1">
+      <div class="div1"><ion-icon name="settings-outline"></ion-icon><h4>SETTİNGS</h4> </div>
+      <div class="div2"><label></label><h3>PASSWORD</h3></div>
+     <div class="div2"><label></label><h3>LANGUAGE</h3></div>
+   </li>
+   
+   <li class="li1">
+      <div class="div1 i"><ion-icon name="log-out-outline"></ion-icon><h4>LOGOUT</h4> </div>
+  </li>
+
+  </ul>
+</nav>
+
+
+<script type="text/javascript">
+  const li = document.querySelectorAll('.li1');
+  function activeLink(){
+    li.forEach((item) =>
+    item.classList.remove('active'));
+    this.classList.add('active');
+  }
+  li.forEach((item)=>
+    item.addEventListener('click',activeLink));
+</script>
+</body>
+</html>
